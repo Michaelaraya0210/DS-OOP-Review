@@ -13,15 +13,22 @@ from game import Game
 class FootballGameTest(unittest.TestCase):
     '''test the class'''
     def test_field_goal_made(self):
-        pass  # TODO
+        football = Game(teams=['Chicago Bears', 'NY Giants'])
+        football.field_goal('Chicago Bears')
+        self.assertEqual(football.score['Chicago Bears'], 3)
 
-    def test_get_winnerr(self):
-        pass  # TODO
+    def test_get_winner(self):
+        football = Game(teams=['NY Giants', 'LA Chargers'])
+        football.safety('NY Giants')
+        football.touchdown('NY Giants')
+        football.touchdown('LA Chargers')
+        self.assertEqual(football.get_winning_team(), ('NY Giants', 'LA Chargers'))
+
 
     def test_safety(self):
-        football = game.Game(teams=['LA Rams', 'NE Patriots'])
+        football = Game(teams=['LA Rams', 'NE Patriots'])
         football.safety('NE Patriots')
-        self.assertEqual(football.score[teams[1]], 2)
+        self.assertEqual(football.score['NE Patriots'], 2)
 
 
 
