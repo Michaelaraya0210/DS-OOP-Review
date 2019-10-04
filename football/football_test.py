@@ -1,6 +1,6 @@
 import unittest
 from players import Player, Quarterback
-from possible_values import *
+from teams import *
 from game import Game
 # TODO - some things you can add...
 
@@ -17,6 +17,12 @@ class FootballGameTest(unittest.TestCase):
 
     def test_get_winnerr(self):
         pass  # TODO
+
+    def test_safety(self):
+        football = game.Game(teams=['LA Rams', 'NE Patriots'])
+        football.safety('NE Patriots')
+        self.assertEqual(football.score[teams[1]], 2)
+
 
 
 class FootballPlayerTest(unittest.TestCase):

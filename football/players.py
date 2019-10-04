@@ -24,7 +24,6 @@ class Player:
         total_points = td_points + safety_points
         return total_points
 
-
 class Quarterback(Player):
     '''Override certain parameters of the default Player class and add some
     functionality unique to quarterbacks
